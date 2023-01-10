@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+          
+           <record id="object0" model="rendement.subscription"> 
+                <field name="name">National Geographic</field>
+                <field name="partner_id">1</field>
+                <field name="start_date">2021-01-01</field>
+                <field name="end_date">2021-03-31</field>
+                <field name="price">100</field>
+           </record>
+          
+           <record id="object1" model="rendement.subscription"> 
+                <field name="name">Financial Times</field>
+                <field name="partner_id">1</field>
+                <field name="start_date">2021-02-01</field>
+                <field name="end_date">2021-03-31</field>
+               <field name="price">110</field>
+           </record> 
+          
+           <record id="object2" model="rendement.subscription"> 
+                <field name="name">The Economist</field>
+                <field name="partner_id">1</field>
+                <field name="start_date">2021-03-01</field>
+                <field name="end_date">2021-05-31</field>
+               <field name="price">70</field>
+           </record> 
+          
+           <record id="object3" model="rendement.subscription"> 
+                <field name="name">Times Now</field>
+                <field name="partner_id">3</field>
+                <field name="start_date">2021-01-01</field>
+                <field name="end_date">2021-03-31</field>
+               <field name="price">120</field>
+           </record> 
+          
+           <record id="object4" model="rendement.subscription"> 
+                <field name="name">NL Times</field>
+                <field name="partner_id">3</field>
+                <field name="start_date">2021-03-01</field>
+                <field name="end_date">2021-05-31</field>
+               <field name="price">90</field>
+           </record> 
+          
+    </data>
+</odoo>

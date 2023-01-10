@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <record id="res_partner_view_buttons" model="ir.ui.view">
+            <field name="name">res.partner.view.buttons</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="sale.res_partner_view_buttons" />
+            <field name="priority" eval="3"/>
+            <field name="arch" type="xml">
+                <div name="button_box" position="inside">
+                    <button class="oe_stat_button" type="object" name="action_view_rendement_subscription"
+                        icon="fa-usd">
+                        <field string="Rendement Subscription" name="rendement_subscription_count" widget="statinfo"/>
+                    </button>
+                </div>
+                <xpath expr="//page[last()]" position="after">
+                    <page string="Subscriptions" name="rendement_subscription">
+                        <field name="rendement_subscription"
+                            widget="section_and_note_one2many"
+                            mode="tree,form"
+                        />
+                    </page>
+                    <page string="Mailings" name="mailings">
+                        <field name="mailings"/>
+                    </page>
+                    <page string="Newsletters" name="newsletters">
+                        <field name="newsletters"/>
+                    </page>
+                    <page string="Consent" name="consent">
+                        <field name="consent"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

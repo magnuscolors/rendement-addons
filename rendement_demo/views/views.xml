@@ -1,0 +1,75 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+      <record model="ir.ui.view" id="rendement_subscription_tree">
+          <field name="name">rendement_demo_list</field>
+          <field name="model">rendement.subscription</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="partner_id"/>
+                  <field name="name"/>
+                  <field name="start_date"/>
+                  <field name="end_date"/>
+                  <field name="price"/>
+              </tree>
+          </field>
+      </record>
+
+      <record model="ir.ui.view" id="rendement_subscription_form">
+            <field name="name">rendement_demo_form</field>
+            <field name="model">rendement.subscription</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group col="4">
+                        <field name="partner_id" context="{'res_partner_search_mode': 'customer', 'show_address': 1, 'show_vat': True}" options="{&quot;always_reload&quot;: True}"/>
+                        <field name="name"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="price"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="action_window">
+      <field name="name">Rendement Subscription</field>
+      <field name="res_model">rendement.subscription</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="rendement_demo.action_server">
+      <field name="name">rendement_demo server</field>
+      <field name="model_id" ref="model_rendement_demo_rendement_demo"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+      <menuitem id="menu_root"
+            name="Rendement"
+            web_icon="sale_management,static/description/icon.png"
+            sequence="10"/>
+     <!--menu categories -->
+      <menuitem id="menu_1"
+            name="Rendement Subscription"
+            parent="menu_root"
+            sequence="2"/>
+
+      <menuitem id="menu_2"
+            name="Rendement Subscription"
+            parent="menu_1"
+            action="action_window"
+            sequence="1"/>
+
+  </data>
+</odoo>
