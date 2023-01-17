@@ -20,10 +20,18 @@
                         />
                     </page>
                     <page string="Mailings" name="mailings">
-                        <field name="mailings"/>
+                        <!--<field name="mailings"/>-->
+                        <field name="mailing_ids"
+                            widget="section_and_note_one2many"
+                            mode="tree,form"
+                        />
                     </page>
                     <page string="Newsletters" name="newsletters">
-                        <field name="newsletters"/>
+                        <!--<field name="newsletters"/>-->
+                        <field name="newsletter_ids"
+                            widget="section_and_note_one2many"
+                            mode="tree,form"
+                        />
                     </page>
                     <page string="Consent" name="consent">
                         <field name="consent"/>

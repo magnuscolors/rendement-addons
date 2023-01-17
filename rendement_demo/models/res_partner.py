@@ -7,9 +7,11 @@ class Partner(models.Model):
 
     rendement_subscription_count = fields.Integer(compute='_compute_rendement_subscription_count', string='Sale Order Count')
     rendement_subscription = fields.One2many('rendement.subscription','partner_id', string="Rendement Subscription")
-    mailings = fields.Text('Mailings')
-    newsletters = fields.Text('Newsletters')
+    # mailings = fields.Text('Mailings')
+    # newsletters = fields.Text('Newsletters')
     consent = fields.Text('Consent')
+    mailing_ids = fields.One2many('rendement.mailing','partner_id', string="Mailings")
+    newsletter_ids = fields.One2many('rendement.newsletter','partner_id', string="Newsletters")
 
 
     def _compute_rendement_subscription_count(self):

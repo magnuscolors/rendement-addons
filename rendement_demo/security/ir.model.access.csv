@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_rendement_demo_rendement_demo,rendement_demo.rendement_demo,model_rendement_subscription,,1,1,1,1
+access_rendement_mailing_rendement_mailing,rendement_demo.rendement_mailing,model_rendement_mailing,,1,1,1,1
+access_rendement_newsletter_rendement_newsletter,rendement_demo.rendement_newsletter,model_rendement_newsletter,,1,1,1,1

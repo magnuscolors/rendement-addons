@@ -11,6 +11,27 @@ class RendementSubscription(models.Model):
     start_date = fields.Date('Start Date')
     end_date = fields.Date('End Date')
     price = fields.Float('Periodic Price')
+    subscription_number = fields.Integer('Subscription Number')
+
+class RendementMailing(models.Model):
+    _name = 'rendement.mailing'
+    _description='Rendement Mailing'
+
+    name = fields.Char('Name')
+    date = fields.Date('Date')
+    bounced = fields.Boolean('Bounced')
+    partner_id = fields.Many2one('res.partner', 'Customer')
+
+class RendementNewsletter(models.Model):
+    _name = 'rendement.newsletter'
+    _description='Rendement Newsletter'
+
+    name = fields.Char('Name')
+    date = fields.Date('Date')
+    partner_id = fields.Many2one('res.partner', 'Customer')
+
+
+
 
 #     @api.depends('value')
 #     def _value_pc(self):

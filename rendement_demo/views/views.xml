@@ -7,6 +7,7 @@
           <field name="model">rendement.subscription</field>
           <field name="arch" type="xml">
               <tree>
+                  <field name="subscription_number"/>
                   <field name="partner_id"/>
                   <field name="name"/>
                   <field name="start_date"/>
@@ -22,6 +23,7 @@
             <field name="arch" type="xml">
                 <form>
                     <group col="4">
+                        <field name="subscription_number"/>
                         <field name="partner_id" context="{'res_partner_search_mode': 'customer', 'show_address': 1, 'show_vat': True}" options="{&quot;always_reload&quot;: True}"/>
                         <field name="name"/>
                         <field name="start_date"/>
@@ -70,6 +72,84 @@
             parent="menu_1"
             action="action_window"
             sequence="1"/>
+
+      <record model="ir.ui.view" id="rendement_mailing_tree">
+          <field name="name">rendement_mailing_demo_list</field>
+          <field name="model">rendement.mailing</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="name"/>
+                  <field name="date"/>
+                  <field name="bounced"/>
+              </tree>
+          </field>
+      </record>
+
+      <record model="ir.ui.view" id="rendement_mailing_form">
+            <field name="name">rendement_mailing_demo_form</field>
+            <field name="model">rendement.mailing</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="date"/>
+                        <field name="bounced"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="action_mailing_window">
+      <field name="name">Rendement Mailing</field>
+      <field name="res_model">rendement.mailing</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+      <menuitem id="menu_3"
+            name="Rendement Mailing"
+            parent="menu_1"
+            action="action_mailing_window"
+            sequence="2"/>
+
+      <record model="ir.ui.view" id="rendement_newsletter_tree">
+          <field name="name">rendement_newsletter_demo_list</field>
+          <field name="model">rendement.newsletter</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="name"/>
+                  <field name="date"/>
+              </tree>
+          </field>
+      </record>
+
+      <record model="ir.ui.view" id="rendement_newsletter_form">
+            <field name="name">rendement_newsletter_demo_form</field>
+            <field name="model">rendement.newsletter</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="date"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="action_newsletter_window">
+      <field name="name">Rendement Newsletter</field>
+      <field name="res_model">rendement.newsletter</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+      <menuitem id="menu_4"
+            name="Rendement newsletter"
+            parent="menu_1"
+            action="action_newsletter_window"
+            sequence="3"/>
+
+
 
   </data>
 </odoo>
